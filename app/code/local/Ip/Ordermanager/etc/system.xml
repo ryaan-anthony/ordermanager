@@ -1,0 +1,138 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!--
+/*
+ * Magento Ip Order Export Module
+ *
+ * NOTICE OF LICENSE
+ *
+ * This source file is subject to the Open Software License (OSL 3.0)
+ * that is bundled with this package in the file LICENSE.txt.
+ * It is also available through the world-wide-web at this URL:
+ * http://opensource.org/licenses/osl-3.0.php
+ * If you did not receive a copy of the license and are unable to
+ * obtain it through the world-wide-web, please send an email
+ * to license@magentocommerce.com so we can send you a copy immediately.
+ *
+ * DISCLAIMER
+ *
+ * Do not edit or add to this file if you wish to upgrade Magento to newer
+ * versions in the future. If you wish to customize Magento for your
+ * needs please refer to http://www.magentocommerce.com for more information.
+ *
+ * @category   Ip
+ * @package    Ip_OrderExport
+ * @copyright  Copyright (c) 2010 Zowta Ltd (http://www.ip.com)
+ * @license    http://opensource.org/licenses/osl-3.0.php  Open Software License (OSL 3.0)
+ * @author     Genevieve Eddison, Jonathan Feist <sales@ip.com>
+ * */ -->
+<config>
+<sections>
+<order_export translate="label" module="ip_ordermanager">
+                    <label>Ip Order Export</label>
+                    <tab>sales</tab>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>301</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <groups>
+                    <export_orders translate="label">
+                    <label>Ip Export Orders</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>2</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <comment>
+	          		<![CDATA[
+						<div style="padding:10px;background-color:#fff;border:1px solid #ddd;margin-bottom:7px;">
+						This module was developed by <a href="http://www.ip.com" target="_blank">www.WebShopApps.com</a> - <b>Magento Extension Specialists</b>.
+						<br/>For docs & examples refer to the Ip <a href="http://wiki.ip.com/extensions/order-export">wiki</a>.
+						<br/>Need an order summary export or more features? We offer <a href="http://www.ip.com/order-export-premium.html"  target="_blank">Order Export Premium</a> including EU VAT registered sales reporting and configurable attributes for export. 
+						<br/>We have many more extensions for pricing, post order workflow and shipping. Visit <a href="http://www.ip.com" target="_blank">Ip</a> for more information.</a>
+						</div>
+					  ]]>
+		  			</comment>
+                    <fields>
+                    	<active translate="label">
+                            <label>Enabled</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>adminhtml/system_config_source_yesno</source_model>
+                            <sort_order>0</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </active>
+                        <output_type translate="label">
+                            <label>Output type</label>
+                            <frontend_type>select</frontend_type>
+                            <source_model>ip_ordermanager_model_options_options</source_model>
+                            <sort_order>1</sort_order>
+                            <show_in_default>1</show_in_default>
+                            <show_in_website>1</show_in_website>
+                            <show_in_store>0</show_in_store>
+                        </output_type>
+					</fields>
+					</export_orders>
+					<highrise translate="label">
+                    <label>Ip Highrise Export</label>
+                    <frontend_type>text</frontend_type>
+                    <sort_order>3</sort_order>
+                    <show_in_default>1</show_in_default>
+                    <show_in_website>1</show_in_website>
+                    <show_in_store>1</show_in_store>
+                    <fields>
+                        <highrise_url translate="label">
+						    <label>Highrise URL</label>
+						    <frontend_type>text</frontend_type>
+						    <sort_order>0</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>0</show_in_store>
+						    <comment>
+							    <![CDATA[E.g. http://yourcompany.highrisehq.com]]>
+						    </comment>
+						</highrise_url>
+                        <highrise_api_key translate="label">
+						    <label>API-Key Password</label>
+						    <frontend_type>text</frontend_type>
+						    <sort_order>1</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>0</show_in_store>
+						    <comment>
+							    <![CDATA[Your highrise api token; can be found under <em>My Info</em>]]>
+						    </comment>
+						</highrise_api_key>
+						<highrise_notes translate="label">
+						    <label>Use Notes</label>
+						    <frontend_type>select</frontend_type>
+              				<source_model>adminhtml/system_config_source_yesno</source_model>
+						    <sort_order>2</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>0</show_in_store>
+						    <comment>
+							    <![CDATA[Use notes of customer to post order details<br />
+								If this is set to <em>No</em>, subsequent order details will not be stored]]>
+						    </comment>
+						</highrise_notes>
+						<highrise_background translate="label">
+						    <label>Use Background Info</label>
+						    <frontend_type>select</frontend_type>
+              				<source_model>adminhtml/system_config_source_yesno</source_model>
+						    <sort_order>3</sort_order>
+						    <show_in_default>1</show_in_default>
+						    <show_in_website>1</show_in_website>
+						    <show_in_store>0</show_in_store>
+						    <comment>
+							    <![CDATA[Set to <em>No</em> to exclusively use notes for order details<br />
+								Set to <em>Yes</em> for first order record in background information]]>
+						    </comment>
+						</highrise_background>
+                        </fields>
+                        </highrise>
+                        </groups>
+                </order_export>
+                </sections>
+                </config>

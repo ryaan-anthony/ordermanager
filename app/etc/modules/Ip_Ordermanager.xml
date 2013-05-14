@@ -1,0 +1,8 @@
+<config>
+    <modules>
+        <Ip_Ordermanager>
+            <active>true</active>
+            <codePool>local</codePool>
+        </Ip_Ordermanager>
+    </modules>
+</config>
